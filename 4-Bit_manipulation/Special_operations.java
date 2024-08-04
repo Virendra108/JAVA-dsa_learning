@@ -36,6 +36,14 @@ public class Special_operations {
                                  // value should start from 1 no extra so taken -1 tha is ~0
         return(n & bitmask);
     }
+
+    //CLEAR range of bits
+    public static int clear_rangebits(int n,int i,int j){
+        int a=(~0)<<j+1;
+        int b=(1<<i)-1;
+        int bitmask= a|b;
+        return(n & bitmask);
+    }
     public static void main(String[] args) {
         //GET
         System.out.println(ith_bit(5, 0)); //0101   1 at 0th  location
@@ -56,6 +64,9 @@ public class Special_operations {
 
         //CLEAR I bits
         System.out.println(clear_iBits(15, 2));  //1111 i=2  last 2 bits ==> 1100 == 12
+
+        //CLEAR range of bits
+        System.out.println(clear_rangebits(10, 2, 4));
 
     }
     
